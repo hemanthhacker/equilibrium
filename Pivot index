@@ -1,0 +1,17 @@
+class Solution:
+    def pivotIndex(self, nums: List[int]) -> int:
+         summ = sum(nums)
+         prefix = 0
+         for i, num in enumerate(nums):
+           if prefix == summ - prefix - num:
+             return i
+           prefix += num
+         return -1
+        	
+OUTPUT:
+Your input
+[1,7,3,6,5,6]
+Output
+3
+Expected
+3
